@@ -1,4 +1,6 @@
-package dsa.trees;
+package dsa.trees.bst;
+
+import dsa.trees.Tree;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package dsa.trees;
+package dsa.trees.bst;
 
 public class TestBST {
     public static void main(String[] args) {
