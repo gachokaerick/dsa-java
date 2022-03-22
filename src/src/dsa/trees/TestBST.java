@@ -19,6 +19,7 @@ public class TestBST {
         System.out.print("\nPreorder: ");
         tree.preorder();
         System.out.print("\nThe number of nodes is " + tree.getSize());
+
         // Search for an element
         System.out.print("\nIs Peter in the tree? " +
                 tree.search("Peter"));
@@ -28,6 +29,17 @@ public class TestBST {
                 = tree.path("Peter");
         for (int i = 0; path != null && i < path.size(); i++)
             System.out.print(path.get(i).element + " ");
+
+        // Search for an element
+        System.out.print("\nIs Erick in the tree? " +
+                tree.search("Erick"));
+        // Get a path from the root to Erick
+        System.out.print("\nA path from the root to Erick is: ");
+        java.util.ArrayList<BST.TreeNode<String>> path2
+                = tree.path("Erick");
+        for (int i = 0; path2 != null && i < path2.size(); i++)
+            System.out.print(path2.get(i).element + " ");
+
         Integer[] numbers = {2, 4, 3, 1, 8, 5, 6, 7};
         BST<Integer> intTree = new BST<>(numbers);
         System.out.print("\nInorder (sorted): ");

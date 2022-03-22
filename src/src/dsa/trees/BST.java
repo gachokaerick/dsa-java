@@ -1,5 +1,7 @@
 package dsa.trees;
 
+import java.util.ArrayList;
+
 public class BST<E> implements Tree<E> {
     protected TreeNode<E> root;
     protected int size = 0;
@@ -165,9 +167,9 @@ public class BST<E> implements Tree<E> {
             } else if (c.compare(e, current.element) > 0) {
                 current = current.right;
             } else
-                break;
+                return list;
         }
-        return list; // Return an array list of nodes
+        return new ArrayList<>(); // Return an array list of nodes
     }
 
     @Override
