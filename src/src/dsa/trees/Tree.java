@@ -1,6 +1,7 @@
 package dsa.trees;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public interface Tree<E> extends Collection<E> {
     /**
@@ -71,20 +72,37 @@ public interface Tree<E> extends Collection<E> {
 
     @Override
     public default boolean containsAll(Collection<?> c) {
-        // Left as an exercise
-        return false;
+        Iterator<E> iterator = (Iterator<E>) c.iterator();
+        while (iterator.hasNext()) {
+            if (!contains(iterator.next())){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public default boolean addAll(Collection<? extends E> c) {
-        // Left as an exercise
-        return false;
+        boolean addedAll = true;
+        Iterator<E> iterator = (Iterator<E>) c.iterator();
+        while (iterator.hasNext()) {
+            if (!add(iterator.next())) {
+                addedAll = false;
+            }
+        }
+        return addedAll;
     }
 
     @Override
     public default boolean removeAll(Collection<?> c) {
-        // Left as an exercise
-        return false;
+        boolean removedAll = true;
+        Iterator<E> iterator = (Iterator<E>) c.iterator();
+        while (iterator.hasNext()) {
+            if (!remove(iterator.next())) {
+                removedAll = false;
+            }
+        }
+        return removedAll;
     }
 
     @Override
