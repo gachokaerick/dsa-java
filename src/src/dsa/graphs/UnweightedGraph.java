@@ -168,8 +168,8 @@ public class UnweightedGraph<V> implements Graph<V> {
     public SearchTree dfs(int v) {
         List<Integer> searchOrder = new ArrayList<>();
         int[] parent = new int[vertices.size()];
-        for (int i = 0; i < parent.length; i++)
-            parent[i] = -1; // Initialize parent[i] to −1
+        // Initialize parent[i] to −1
+        Arrays.fill(parent, -1);
         // Mark visited vertices
         boolean[] isVisited = new boolean[vertices.size()];
         // Recursively search
