@@ -1,8 +1,8 @@
 package dsa.graphs;
 
 public class Edge {
-    int u;
-    int v;
+    public int u;
+    public int v;
 
     public Edge(int u, int v) {
         this.u = u;
